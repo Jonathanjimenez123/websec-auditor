@@ -1,6 +1,3 @@
-# WebSec Auditor
-
-
 API para auditoría pasiva de cabeceras HTTP. Proyecto para portafolio profesional.
 
 
@@ -27,4 +24,5 @@ Docs: http://localhost:8000/docs
 
 ## Nota de ética
 Usa la herramienta sólo sobre hosts que poseas o con permiso explícito.
+
 
