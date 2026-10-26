@@ -1,27 +1,32 @@
-[tool.poetry]
+[project]
 name = "websec-auditor"
 version = "0.1.0"
 description = "API para auditoría pasiva de cabeceras HTTP"
-authors = ["Jonathan Jimenez <jonathan@example.com>"]
-packages = [{ include = "websec_auditor", from = "src" }]
+authors = [
+    { name = "Jonathan Jimenez", email = "jonathan@example.com" }
+]
+requires-python = ">=3.11,<4.0"
+dependencies = [
+    "fastapi (>=0.100,<0.101)",
+    "uvicorn[standard] (>=0.22,<0.23)",
+    "httpx (>=0.28.1,<0.29)",
+    "sqlmodel (>=0.0.8,<0.1)",
+    "python-dotenv (>=1.0,<2.0)"
+]
 
+[dependency-groups]
+dev = [
+    "pytest (>=7.0,<8.0)",
+    "black (>=24.0,<25.0)",
+    "ruff (>=0.8,<0.9)"
+]
 
-[tool.poetry.dependencies]
-python = "^3.11"
-fastapi = "^0.100"
-uvicorn = {extras = ["standard"], version = "^0.22"}
-httpx = "^0.24"
-sqlmodel = "^0.0.8"
-python-dotenv = "^1.0"
-
-
-[tool.poetry.dev-dependencies]
-pytest = "^7.0"
-black = "^24.0"
-ruff = "^0.28"
-
+[tool.poetry]
+packages = [
+    { include = "websec_auditor", from = "src" }
+]
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
 
