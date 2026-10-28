@@ -5,20 +5,22 @@ description = "API para auditoría pasiva de cabeceras HTTP"
 authors = [
     { name = "Jonathan Jimenez", email = "jonathan@example.com" }
 ]
-requires-python = ">=3.11,<4.0"
+requires-python = ">=3.11,<3.13"
 dependencies = [
-    "fastapi (>=0.100,<0.101)",
-    "uvicorn[standard] (>=0.22,<0.23)",
-    "httpx (>=0.28.1,<0.29)",
-    "sqlmodel (>=0.0.8,<0.1)",
-    "python-dotenv (>=1.0,<2.0)"
+    "fastapi>=0.115,<1.0",
+    "uvicorn[standard]>=0.30,<1.0",
+    "httpx>=0.28,<1.0",
+    "sqlmodel>=0.0.22,<1.0",
+    "pydantic>=2.9,<3.0",
+    "pydantic-settings>=2.5,<3.0",
+    "python-dotenv>=1.0,<2.0"
 ]
 
 [dependency-groups]
 dev = [
-    "pytest (>=7.0,<8.0)",
-    "black (>=24.0,<25.0)",
-    "ruff (>=0.8,<0.9)"
+    "pytest>=8.0,<9.0",
+    "black>=24.0,<27.0",
+    "ruff>=0.8,<1.0"
 ]
 
 [tool.poetry]
@@ -29,4 +31,3 @@ packages = [
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
-

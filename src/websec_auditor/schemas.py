@@ -1,18 +1,16 @@
-from pydantic import BaseModel, HttpUrl
 from typing import Optional
+
+from pydantic import BaseModel, ConfigDict, HttpUrl
 
 
 class ScanCreate(BaseModel):
-url: HttpUrl
+    url: HttpUrl
 
 
 class ScanRead(BaseModel):
-id: int
-url: str
-status_code: Optional[int]
-analysis: Optional[str]
+    model_config = ConfigDict(from_attributes=True)
 
-
-class Config:
-orm_mode = True
-
+    id: int
+    url: str
+    status_code: Optional[int] = None
+    analysis: Optional[str] = None

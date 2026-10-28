@@ -9,3 +9,8 @@ venv/
 dist/
 build/
 *.egg-info/
+
+# Base de datos local
+*.db
+*.db-shm
+*.db-wal
